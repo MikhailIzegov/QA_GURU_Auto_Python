@@ -10,7 +10,7 @@ def config_browser():
 
 @pytest.fixture(scope="function", autouse=True)
 def open_browser(config_browser):
-    browser.open("https://www.google.com")
+    browser.open('https://demoqa.com/text-box')
     yield browser
 
     browser.quit()
