@@ -1,0 +1,5 @@
+selene
+selenium
+pytest
+pytest-ordering
+faker
