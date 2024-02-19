@@ -4,8 +4,8 @@ import pytest
 
 @pytest.fixture(scope="session", autouse=False)
 def config_browser():
-    browser.config.window_width = 1600
-    browser.config.window_height = 900
+    browser.config.window_width = 0
+    browser.config.window_height = 0
 
 
 @pytest.fixture(scope="function", autouse=True)
