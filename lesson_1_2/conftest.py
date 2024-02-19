@@ -6,7 +6,7 @@ import pytest
 def config_browser():
     browser.config.window_width = 0
     browser.config.window_height = 0
-    print("!!! Hello")
+    print("!!! Hello !!!")
 
 
 @pytest.fixture(scope="function", autouse=True)
