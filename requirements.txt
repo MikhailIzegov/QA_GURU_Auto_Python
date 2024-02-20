@@ -1,5 +1,9 @@
-selene
+selene~=2.0.0rc8
 selenium
-pytest
+pytest~=8.0.0
 pytest-ordering
-faker
+faker~=23.2.0
+xlrd~=2.0.1
+openpyxl
+pypdf
+pypdf[image]
