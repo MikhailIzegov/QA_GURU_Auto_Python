@@ -7,3 +7,4 @@ xlrd~=2.0.1
 openpyxl
 pypdf
 pypdf[image]
+allure-pytest
