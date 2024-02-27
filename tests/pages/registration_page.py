@@ -29,17 +29,19 @@ class RegistrationPage:
         self.submit_data()
 
     def should_have_user(self, user):
+        full_name = test_user.first_name + ' ' + test_user.last_name
+        state_and_city = test_user.state + ' ' + test_user.city
         self.registered_user_data.should(have.exact_texts(
-            'Olga YA',
-            'name@example.com',
-            'Female',
-            '1234567891',
-            '11 May,1999',
-            'Computer Science',
-            'Reading',
-            'foto.png',
-            'Moscowskaya Street 18',
-            'NCR Delhi',
+            full_name,
+            test_user.email,
+            test_user.gender,
+            test_user.phone_number,
+            '11 May,1999',  # Можно не хардкодить
+            test_user.subject,
+            test_user.hobby,
+            'foto.png',  # Можно не хардкодить
+            test_user.current_address,
+            state_and_city,
         )
         )
 
