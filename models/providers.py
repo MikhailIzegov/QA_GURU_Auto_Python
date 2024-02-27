@@ -6,7 +6,7 @@ from models.users import User, Status
 CURRENT_FILE_PATH = os.path.dirname(__file__)
 PROJECT_ROOT_PATH = os.path.dirname(CURRENT_FILE_PATH)
 TEMP_PATH = os.path.join(PROJECT_ROOT_PATH, 'temp')
-csv_file_path = os.path.join(TEMP_PATH, 'users.csv')
+csv_file_path = os.path.join(TEMP_PATH, 'users_for_tests.csv')
 
 
 # Это АБСТРАКТНЫЙ класс, обозначающий как мы будем брать наши данные,

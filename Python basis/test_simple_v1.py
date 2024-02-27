@@ -10,7 +10,7 @@ def test_workers_are_adults():
     """
     Тестируем, что все работники старше 18 лет
     """
-    csv_file_path = os.path.join(TEMP_PATH, 'users.csv')
+    csv_file_path = os.path.join(TEMP_PATH, 'users_for_tests.csv')
     print(csv_file_path)
     with open(csv_file_path) as f:
         users = csv.DictReader(f, delimiter=';')
@@ -20,7 +20,7 @@ def test_workers_are_adults():
         # В много строк:
         """
         workers = []
-        for user in users:
+        for user in users_for_tests:
             if user['status'] == 'worker':
                 workers.append(user)
                 """
