@@ -9,7 +9,7 @@ from models.users import User, USER_ADULT_AGE, Status, Worker
 CURRENT_FILE_PATH = os.path.dirname(__file__)
 PROJECT_ROOT_PATH = os.path.dirname(CURRENT_FILE_PATH)
 TEMP_PATH = os.path.join(PROJECT_ROOT_PATH, 'temp')
-csv_file_path = os.path.join(TEMP_PATH, 'users.csv')
+csv_file_path = os.path.join(TEMP_PATH, 'users_for_tests.csv')
 
 
 @pytest.fixture(params=[CsvUserProvider, DatabaseUserProvider, ApiUserProvider])
