@@ -4,7 +4,8 @@ pytest~=8.0.0
 pytest-ordering
 faker~=23.2.0
 xlrd~=2.0.1
-openpyxl
-pypdf
+openpyxl~=3.1.2
+pypdf~=4.0.2
 pypdf[image]
 allure-pytest
+StrEnum~=0.4.15
