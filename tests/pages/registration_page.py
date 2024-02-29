@@ -1,6 +1,6 @@
 from selene import browser
 from selene.support.shared import browser
-from selene import have
+from selene import have, be
 from selene import command
 import os
 import tests
@@ -46,6 +46,7 @@ class RegistrationPage:
         )
 
     def fill_first_name(self, value):
+        browser.element("#firstName").with_(timeout=60.0).should(be.visible)
         browser.element("#firstName").type(value)
 
     def fill_last_name(self, value):
