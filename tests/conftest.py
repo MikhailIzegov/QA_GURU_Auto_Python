@@ -5,7 +5,7 @@ from selene import browser
 
 
 @pytest.fixture(scope="function", autouse=True)
-def setup_browser(request):
+def setup_browser():
     browser.config.base_url = 'https://demoqa.com'
     options = Options()
     selenoid_capabilities = {
@@ -25,6 +25,6 @@ def setup_browser(request):
 
     browser.config.driver = driver
 
-    yield browser
+    yield
 
     browser.quit()
