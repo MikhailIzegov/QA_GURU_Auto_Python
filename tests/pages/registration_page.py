@@ -1,3 +1,5 @@
+import allure
+from allure_commons.types import AttachmentType
 from selene import browser
 from selene.support.shared import browser
 from selene import have, be
@@ -111,3 +113,7 @@ class RegistrationPage:
     @property
     def registered_user_data(self):
         return browser.element('.table').all('td').with_(timeout=10).even
+
+    def add_html(self):
+        html = browser.driver.page_source
+        allure.attach(html, 'page_source', AttachmentType.HTML, '.html')

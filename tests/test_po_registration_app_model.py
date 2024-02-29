@@ -1,5 +1,6 @@
 from tests.pages.application import app
 from tests.users_for_tests import users
+from utils import attach
 
 
 def test_fill_in_form():
@@ -7,3 +8,5 @@ def test_fill_in_form():
 
     app.registration_page.register(users.test_user)
     app.registration_page.should_have_user(users.test_user)
+
+    app.registration_page.add_html()
