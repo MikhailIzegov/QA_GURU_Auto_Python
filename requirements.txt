@@ -1,5 +1,5 @@
 selene==2.0.0rc8
-selenium
+selenium==4.18.1
 pytest~=8.0.0
 pytest-ordering
 faker~=23.2.0
