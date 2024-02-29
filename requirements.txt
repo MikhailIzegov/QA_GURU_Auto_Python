@@ -1,4 +1,4 @@
-selene~=2.0.0rc8
+selene==2.0.0rc8
 selenium
 pytest~=8.0.0
 pytest-ordering

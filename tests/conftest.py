@@ -1,29 +1,28 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene import Browser, Config
+from selene import browser, Config
+import os
 
 
 @pytest.fixture(scope="function", autouse=True)
 def setup_browser(request):
-    browser_version = '100.0'
-    options = Options()
-    selenoid_capabilities = {
-        'browserName': 'chrome',
-        'browserVersion': browser_version,
-        'selenoid:options': {
+    options = webdriver.ChromeOptions()
+    options.browser_version = '100.0'
+    options.set_capability(
+        'selenoid:options',
+        {
+            'screenResolution': '1920x1080x24',
             'enableVNC': True,
-            'enableVideo': True
-        }
-    }
-    options.capabilities.update(selenoid_capabilities)
-    driver = webdriver.Remote(
-        command_executor=f'https://user1:1234@selenoid.autotests.cloud/wd/hub',
-        options=options
+            'enableVideo': True,
+            'enableLog': True,
+        },
     )
 
-    browser = Browser(Config(driver))
-    browser.config.base_url = 'https://demoqa.com'
+    browser.config.driver_options = options
+    browser.config.driver_remote_url = (
+        f'https://user1:1234@selenoid.autotests.cloud/wd/hub'
+    )
 
     yield browser
 
