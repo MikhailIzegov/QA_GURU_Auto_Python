@@ -1,5 +1,4 @@
 import allure
-from allure_commons.types import AttachmentType
 from selene import browser
 from selene.support.shared import browser
 from selene import have, be
