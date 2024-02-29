@@ -2,7 +2,7 @@ from tests.pages.application import app
 from tests.users_for_tests import users
 
 
-def test_fill_in_form():
+def test_fill_in_form(setup_browser):
     app.registration_page.open_page()
 
     app.registration_page.register(users.test_user)
