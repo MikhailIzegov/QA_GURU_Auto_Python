@@ -1,6 +1,5 @@
 from tests.pages.application import app
 from tests.users_for_tests import users
-from utils import attach
 
 
 def test_fill_in_form():
