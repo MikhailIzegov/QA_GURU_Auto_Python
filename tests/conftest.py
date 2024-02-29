@@ -8,7 +8,7 @@ import os
 @pytest.fixture(scope="function", autouse=True)
 def setup_browser(request):
     options = webdriver.ChromeOptions()
-    options.browser_version = '100.0'
+    options.browser_version = '122.0'
     options.set_capability(
         'selenoid:options', {
             'enableVNC': True,
