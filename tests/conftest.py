@@ -4,8 +4,9 @@ from selenium.webdriver.chrome.options import Options
 from selene import browser
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="function", autouse=True)
 def setup_browser(request):
+    browser.config.base_url = 'https://demoqa.com'
     options = Options()
     selenoid_capabilities = {
         'browserName': 'chrome',

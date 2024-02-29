@@ -10,7 +10,7 @@ from tests.users_for_tests.users import test_user
 class RegistrationPage:
 
     def open_page(self):
-        browser.open('https://demoqa.com/automation-practice-form')
+        browser.open('/automation-practice-form')
         browser.driver.maximize_window()
 
     def register(self, user):
