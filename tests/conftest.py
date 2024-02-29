@@ -7,15 +7,15 @@ import os
 
 @pytest.fixture(scope="function", autouse=True)
 def setup_browser(request):
-    options = Options()
-    selenoid_capabilities = {
-        'browserName': 'chrome',
-        'selenoid:options': {
+    options = webdriver.ChromeOptions()
+    options.browser_version = '100.0'
+    options.set_capability(
+        'selenoid:options', {
             'enableVNC': True,
-            'enableVideo': True
+            'enableVideo': True,
+            'enableLog': True
         }
-    }
-    options.capabilities.update(selenoid_capabilities)
+    )
 
     browser.config.driver_options = options
     browser.config.driver_remote_url = (
