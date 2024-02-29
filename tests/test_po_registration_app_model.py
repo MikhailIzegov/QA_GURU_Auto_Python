@@ -1,4 +1,4 @@
-from selene import browser
+from selene.support.shared import browser
 
 from tests.pages.application import app
 from tests.users_for_tests import users
