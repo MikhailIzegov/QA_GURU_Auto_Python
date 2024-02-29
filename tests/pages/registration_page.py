@@ -115,4 +115,4 @@ class RegistrationPage:
 
     def add_html(self):
         html = browser.driver.page_source
-        allure.attach(html, name='page_source', attachment_type=allure.attachment_type.HTML)
+        allure.attach(body=html, name='page_source', attachment_type=allure.attachment_type.HTML, extension='.html')
