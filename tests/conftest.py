@@ -8,10 +8,8 @@ import os
 @pytest.fixture(scope="function", autouse=True)
 def setup_browser(request):
     options = Options()
-    browser_version = '100.0'
     selenoid_capabilities = {
         'browserName': 'chrome',
-        'browserVersion': browser_version,
         'selenoid:options': {
             'enableVNC': True,
             'enableVideo': True
