@@ -1,8 +1,9 @@
-import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import browser
+
+from tests import attach
 
 
 @pytest.fixture(scope="function", autouse=True)
@@ -28,13 +29,9 @@ def setup_browser():
 
     yield
 
-    html = browser.driver.page_source
-    allure.attach(body=html, name='page_source', attachment_type=allure.attachment_type.HTML, extension='.html')
-
-    png = browser.driver.get_screenshot_as_png()
-    allure.attach(body=png, name='screenshot', attachment_type=allure.attachment_type.PNG, extension='.png')
-
-    log = ''.join(f'{text}\n' for text in browser.driver.get_log(log_type='browser'))
-    allure.attach(log, 'browser_logs', allure.attachment_type.TEXT, '.log')
+    attach.add_screenshot(browser)
+    attach.add_logs(browser)
+    attach.add_html(browser)
+    attach.add_video(browser)
 
     browser.quit()
