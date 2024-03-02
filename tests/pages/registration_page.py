@@ -13,6 +13,10 @@ class RegistrationPage:
     def open_page(self):
         browser.open('/automation-practice-form')
         browser.driver.maximize_window()
+        if browser.element('.fc-dialog-container').should(be.visible):
+            browser.element('[aria-label="Consent"] > .fc-button-label').click()
+        else:
+            pass
 
     def register(self, user):
         self.fill_first_name(test_user.first_name)
