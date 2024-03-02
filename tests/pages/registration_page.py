@@ -116,7 +116,3 @@ class RegistrationPage:
     @property
     def registered_user_data(self):
         return browser.element('.table').all('td').with_(timeout=10).even
-
-    def add_html(self):
-        html = browser.driver.page_source
-        allure.attach(body=html, name='page_source', attachment_type=allure.attachment_type.HTML, extension='.html')
