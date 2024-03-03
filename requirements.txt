@@ -9,3 +9,4 @@ pypdf~=4.0.2
 pypdf[image]
 allure-pytest
 StrEnum~=0.4.15
+python-dotenv==1.0.1
