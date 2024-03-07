@@ -10,3 +10,5 @@ pypdf[image]
 allure-pytest
 StrEnum~=0.4.15
 python-dotenv==1.0.1
+requests~=2.31.0
+jsonschema~=4.21.1
