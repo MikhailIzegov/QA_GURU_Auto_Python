@@ -1,7 +1,7 @@
 import jsonschema
 import requests
 
-from tests.api.utils.read_json import load_schema
+from tests.api_reqres.utils.read_json import load_schema
 
 
 def test_get_users_status_code():
@@ -62,7 +62,7 @@ def test_patch_user():
             "name": "morpheus666"
     })
 
-    schema = load_schema('patch_users.json')
+    schema = load_schema('get_all_breeds.json')
     assert response.status_code == 200
     jsonschema.validate(response.json(), schema)
 

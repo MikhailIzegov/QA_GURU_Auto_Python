@@ -25,7 +25,7 @@ def user_provider() -> UserProvider:
 
 @pytest.fixture
 def users(user_provider) -> list[User]:
-    return user_provider.get_users()  # Таким образом в самом тесте не важно, откуда берем - csv, db, api,
+    return user_provider.get_users()  # Таким образом в самом тесте не важно, откуда берем - csv, db, api_reqres,
     # мы вызываем общий get_users
 
 
